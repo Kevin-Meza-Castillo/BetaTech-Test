@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "6aed7a48-3935-48af-a256-b77558f21eb9",
+		"name": "BetaTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6100031"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/loans",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idNumber\":\"604150266\",\r\n    \"codeLoans\": \"CODLO-002\",\r\n    \"codeAssets\": \"ASS-003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/loans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"loans"
+					]
+				},
+				"description": "Permite realizar el ingreso de prestamos de activos de los usuarios (\n\nRestricciones:\n\n- No permite prestar 1 activo a dos personas al mismo tiempo,\n- No permite prestar activos desactivados\n- Un usuarios desactivados no puede recibir prestamos)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStlQm1SQUFPRmJTdzNwbkVPSFhRY3VMajd6czBIQWoraz0iLCJpYXQiOjE2NzIxNzcwNDMsImV4cCI6MTY3MjI2MzQ0M30.Izso0vOiHwZGn5To2vHo5e_Te59T8Qznw5hUtm6PwmA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n     {\r\n        \"idNumber\":\"604150566\",\r\n        \"email\": \"Kevinmezamc@gmail.com\",\r\n        \"password\": \"angaby290394\",\r\n        \"name\": \"Kevin\",\r\n        \"lastName\": \"Meza\",\r\n        \"ocupation\": \"fullstack dev\",\r\n        \"age\": 28\r\n    },\r\n    {\r\n        \"idNumber\":\"604150266\",\r\n        \"email\": \"Kevinmezamc1@gmail.com\",\r\n        \"password\": \"angaby290394\",\r\n        \"name\": \"Kevin\",\r\n        \"lastName\": \"Meza\",\r\n        \"ocupation\": \"fullstack dev\",\r\n        \"age\": 28\r\n    }\r\n\r\n]\r\n   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "Permite ingresar los datos de los usuarios (\n\nRestricciones:\n\n- No permite repetir usuarios por el id,\n- No permite repetir email de usuario)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/assets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n    \"codeAssets\":\"ASS-001\",\r\n    \"name\":\"Laptop\",\r\n    \"description\":\"HP 14-DK1032WM RYZEN 3 3250U - 4GB - 128GB-SSD - 14- W10\",\r\n    \"trade\":\"HP\",\r\n    \"active\":true\r\n},\r\n{\r\n    \"codeAssets\":\"ASS-002\",\r\n    \"name\":\"Laptop\",\r\n    \"description\":\"ASUS E410KA - INTEL CELERON N4500 - 4GB\",\r\n    \"trade\":\"HP\",\r\n    \"active\":true\r\n},\r\n{\r\n    \"codeAssets\":\"ASS-003\",\r\n    \"name\":\"Laptop\",\r\n    \"description\":\"ASUS E410KA - INTEL CELERON N4500 - 4GB\",\r\n    \"trade\":\"HP\",\r\n    \"active\":true\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/assets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"assets"
+					]
+				},
+				"description": "StartFragment\n\nPermite ingresar los datos de los activos(\n\nRestricciones:\n\n- No permite activos repetidos por el id)\n    \n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/loans/listByUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idNumber\":\"604140666\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/loans/listByUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"loans",
+						"listByUser"
+					]
+				},
+				"description": "Muestra la informacion de los usuarios consultados por id sobre los prestamos de activos que tengan activos"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/loans/delete",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idNumber\":\"604140666\",\r\n    \"codeAssets\": \"ASS-001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/loans/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"loans",
+						"delete"
+					]
+				},
+				"description": "Permite actualizar el estado de los prestamos para eliminar su relacion con los usuarios"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/assets/delete",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"codeAssets\": \"ASS-001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/assets/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"assets",
+						"delete"
+					]
+				},
+				"description": "Permite sacar un activo de disponibilidad para prestamo. (El activo no se puede vincular a un usuario)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/users/delete",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idNumber\":\"604140666\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/users/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"delete"
+					]
+				},
+				"description": "StartFragment\n\nPermite sacar un usuario de disponibilidad para realizar solicitudes de prestamos. (El usuario no se puede vincular a un activo)\n\nEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/users/listUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/users/listUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"listUsers"
+					]
+				},
+				"description": "Permite visualizar toda la lista de usuarios dentro de la BD\n\n(Restricciones:\n\n- Solo muestra usuarios disponibles(Activos))"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/users/listByUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"idNumber\":\"604150266\"\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/users/listByUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"listByUser"
+					]
+				},
+				"description": "Permite visualizar la informacion de los usuarios consultados por id usuario"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/assets/listAssets",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/assets/listAssets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"assets",
+						"listAssets"
+					]
+				},
+				"description": "StartFragment\n\nPermite visualizar toda la lista de activos dentro de la BD (\n\nRestricciones:\n\n- Solo muestra activos disponibles(Activos))"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/assets/listByAsset",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMStLT0h3TjYxd2hHbEpXYWF0cU81ZS9lNUFhYk0vb0ZMST0iLCJpYXQiOjE2NzIxODM1NDQsImV4cCI6MTY3MjI2OTk0NH0.mzyKk9AwTQAyeYI4tEvUGbE8bZiwxqfIqYEJwDUhAdA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codeAssets\": \"ASS-001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/assets/listByAsset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"assets",
+						"listByAsset"
+					]
+				},
+				"description": "Permite visualizar la informacion de los activos consultados por id activos"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\"email\": \"Kevinmezamc@gmail.com\",\"password\": \"angaby290394\"}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"login"
+					]
+				},
+				"description": "Antes de utilizar las demas api con excepcion de la api que permite el ingreso de usuarios se debe ejecutar esta api para obtener el token necesario para que les permita realizar la peticion a backend."
+			},
+			"response": []
+		}
+	]
+}
